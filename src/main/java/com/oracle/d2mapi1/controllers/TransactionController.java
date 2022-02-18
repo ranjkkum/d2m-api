@@ -39,13 +39,19 @@ public class TransactionController {
 	}
 	
 	@GetMapping("/health")
-	public String getType() throws UnknownHostException {
+	public String getHealth() throws UnknownHostException {
 		
 		return "Hello from API  Server !! "
 				+ InetAddress.getLocalHost().getHostAddress() + " | " 
 				+ InetAddress.getLocalHost().getHostName()+ " | "
 				+ InetAddress.getLoopbackAddress().getHostAddress() + "|"
 				+ InetAddress.getLoopbackAddress().getHostName();
+	}
+	
+	@GetMapping("/type")
+	public String getType() throws UnknownHostException {
+		
+		return "Develpoment !!";
 	}
 	
 	@GetMapping("/transaction/{id}")
