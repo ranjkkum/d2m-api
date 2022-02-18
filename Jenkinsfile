@@ -8,7 +8,7 @@ pipeline {
     githubPush()
   }
   stages{
-    stage("build"){
+    stage("Build App"){
       steps{
         sh 'mvn clean install'
       }

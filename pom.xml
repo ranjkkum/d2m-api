@@ -49,6 +49,14 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>693124937b08-snapshots</name>
+        <url>http://34.125.172.212:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -65,5 +73,7 @@
     </plugin>
 		</plugins>
 	</build>
+	
+	
 
 </project>
