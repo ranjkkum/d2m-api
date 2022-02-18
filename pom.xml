@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.oracle</groupId>
 	<artifactId>d2m-api-1</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>war</packaging>
 	<name>d2m-api-1</name>
 	<description>API D2M Aproject</description>
@@ -54,7 +54,7 @@
     <snapshotRepository>
         <id>snapshots</id>
         <name>693124937b08-snapshots</name>
-        <url>http://34.125.172.212:8081/artifactory/libs-snapshot-local</url>
+        <url>http://34.125.172.212:8081/artifactory/libs-release-local</url>
     </snapshotRepository>
 	</distributionManagement>
 
