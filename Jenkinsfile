@@ -49,7 +49,9 @@ pipeline {
     stage('Clear Workspace') {
       steps{
         sh """
-          docker container ls
+          docker container rm -f \$(docker container ls -q)
+          docker image rm -f \$(docker image ls -q)
+          rm -rf ${env.WORKSPACE}/docker
           """
       }
     }
