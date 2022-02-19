@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    imagename = 'my-ubuntu'
+    imagename = 'my-ubuntu:1.0'
   }
   tools { 
     maven 'Maven' 
