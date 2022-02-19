@@ -17,7 +17,7 @@ pipeline {
     stage("Code Quality"){
       steps{
         withSonarQubeEnv('SonarQube'){
-          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=d2m-api-1'
+          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=d2m-api-1 -Dsonar.qualitygate.wait=true'
         }
       }
     }
