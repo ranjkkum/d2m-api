@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environments {
+    imagename = 'my-ubuntu'
+  }
   tools { 
     maven 'Maven' 
     jdk 'JDK11' 
