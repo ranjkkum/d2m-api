@@ -20,7 +20,7 @@ pipeline {
     stage('Build Docker Image') {
       steps{
         script {
-          dockerImage = docker.build "${imagename}":${env.BRANCH_NAME}-1.0.${env.BUILD_NUMBER}
+          dockerImage = docker.build "${imagename}:${env.BRANCH_NAME}-1.0.${env.BUILD_NUMBER}"
         }
       }
     }
