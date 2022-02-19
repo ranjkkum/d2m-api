@@ -41,7 +41,7 @@ pipeline {
       steps{
         script {
 
-          docker.withRegistry('ranjkkum.jfrog.io', 'jfrog'){
+          docker.withRegistry('https://ranjkkum.jfrog.io', 'jfrog'){
             dockerImage = docker.push(getDockerTag())
           }          
         }
