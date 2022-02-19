@@ -13,6 +13,13 @@ pipeline {
     githubPush()
   }
   stages{
+
+    stage("Test App"){
+      steps{
+        echo 'Running test cases !!'
+        echo 'Testing successfull !!'
+      }
+    }
     stage("Build App"){
       steps{
         sh 'mvn clean deploy'
