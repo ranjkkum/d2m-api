@@ -40,8 +40,10 @@ pipeline {
     stage('Push Docker Image') {
       steps{
         script {
-          // sh 'printenv'
-          dockerImage = docker.push(getDockerTag())
+
+          docker.withRegistry('ranjkkum.jfrog.io', 'jfrog'){
+            dockerImage = docker.push(getDockerTag())
+          }          
         }
       }
     }
