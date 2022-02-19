@@ -42,7 +42,7 @@ pipeline {
         script {
 
           docker.withRegistry('https://ranjkkum.jfrog.io', 'jfrog'){
-            dockerImage.push(getDockerTag())
+            dockerImage.push()
           }          
         }
       }
