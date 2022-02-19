@@ -14,6 +14,11 @@ pipeline {
   }
   stages{
 
+    stage("Code Quality"){
+      steps{
+        sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=d2m-api-1'
+      }
+    }
     stage("Test App"){
       steps{
         echo 'Running test cases !!'
