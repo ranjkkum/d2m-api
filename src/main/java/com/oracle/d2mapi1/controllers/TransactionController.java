@@ -48,6 +48,16 @@ public class TransactionController {
 				+ InetAddress.getLoopbackAddress().getHostName();
 	}
 	
+	@GetMapping("/health1")
+	public String getType1() throws UnknownHostException {
+		
+		return "Hello from API  Server !! "
+				+ InetAddress.getLocalHost().getHostAddress() + " | " 
+				+ InetAddress.getLocalHost().getHostName()+ " | "
+				+ InetAddress.getLoopbackAddress().getHostAddress() + "|"
+				+ InetAddress.getLoopbackAddress().getHostName();
+	}
+	
 	@GetMapping("/transaction/{id}")
 	public Transaction viewTransactionById(@PathVariable ("id") Long id) {
 		Optional<Transaction> transaction = transactionService.getTransaction(id);
