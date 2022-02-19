@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  environments {
+  environment {
     imagename = 'my-ubuntu'
   }
   tools { 
