@@ -8,7 +8,6 @@ pipeline {
   tools { 
     maven 'Maven' 
     jdk 'JDK11' 
-    scannerHome 'SonarQubeScanner'
   }
   triggers {
     githubPush()
