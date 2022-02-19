@@ -40,10 +40,20 @@ pipeline {
     stage('Push Docker Image') {
       steps{
         script {
-
           docker.withRegistry('https://ranjkkum.jfrog.io', 'jfrog'){
             dockerImage.push()
           }          
+        }
+      }
+    }
+    stage('Clear Workspace') {
+      steps{
+        script {
+          sh """
+          docker container rm -f $(docker container ls -q)
+          docker image rm -f $(docker image ls -q)
+          rm -rf ${env.WORKSPACE}/docker
+          """
         }
       }
     }
