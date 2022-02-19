@@ -27,5 +27,5 @@ RUN chown -R ${ORACLE_USER}:${GROUP_ID} ${CATALINA_HOME}/builds
 
 USER ${ORACLE_USER}
 WORKDIR $CATALINA_HOME
-RUN ln -sf ../builds/${APP_NAME}-${BUILD_VERSION}-SNAPSHOT.war webapps/ROOT.war
+RUN ln -sf ../builds/${APP_NAME}-${BUILD_VERSION}.war webapps/ROOT.war
 EXPOSE 8080
