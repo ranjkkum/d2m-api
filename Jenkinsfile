@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    node { label "slave-1" } 
+    node { label "master" } 
   }
   environment {
     APP = readMavenPom().getArtifactId()
