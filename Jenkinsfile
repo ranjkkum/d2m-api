@@ -8,6 +8,7 @@ pipeline {
   tools { 
     maven 'Maven' 
     jdk 'JDK11' 
+    scannerHome 'SonarQubeScanner'
   }
   triggers {
     githubPush()
@@ -16,7 +17,9 @@ pipeline {
 
     stage("Code Quality"){
       steps{
-        sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=d2m-api-1'
+        withSonarQubeEnv('sonarqube'){
+          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=d2m-api-1'
+        }
       }
     }
     stage("Test App"){
