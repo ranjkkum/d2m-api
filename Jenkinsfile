@@ -31,7 +31,7 @@ pipeline {
       steps{
         script {
           // sh 'printenv'
-          dockerImage = docker.build("${imagename}:prod-1.0.${env.BUILD_NUMBER}", "./docker")
+          dockerImage = docker.build("${imagename}:prod-1.0.${env.BUILD_NUMBER}", "--no-cache --build-arg APP_NAME=d2m-api-1 --build-arg BUILD_VERSION=0.0.2 -f ./docker/Dockerfile ./docker")
         }
       }
     }
