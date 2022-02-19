@@ -59,6 +59,8 @@ pipeline {
 }
 
 
+
+
 def getDockerTag(){
   return "ranjkkum.jfrog.io/d2m-docker/${APP}:prod-1.0.${env.BUILD_NUMBER}"
 }
