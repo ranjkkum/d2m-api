@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    IMAGE = readMavenPom().getArtifactId()
+    APP = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
   }
 
@@ -33,7 +33,7 @@ pipeline {
       steps{
         script {
           // sh 'printenv'
-          dockerImage = docker.build(getDockerTag(), "--no-cache --build-arg APP_NAME=d2m-api-1 --build-arg BUILD_VERSION=0.0.2 -f ./docker/Dockerfile ./docker")
+          dockerImage = docker.build(getDockerTag(), "--no-cache --build-arg APP_NAME=${APP} --build-arg BUILD_VERSION=${VERSION} -f ./docker/Dockerfile ./docker")
         }
       }
     }
@@ -50,5 +50,5 @@ pipeline {
 
 
 def getDockerTag(){
-  return "ranjkkum.jfrog.io/d2m-docker/${IMAGE}:prod-1.0.${env.BUILD_NUMBER}"
+  return "ranjkkum.jfrog.io/d2m-docker/${APP}:prod-1.0.${env.BUILD_NUMBER}"
 }
