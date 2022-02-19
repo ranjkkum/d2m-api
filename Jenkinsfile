@@ -20,8 +20,8 @@ pipeline {
     stage('Build Docker Image') {
       steps{
         script {
-          sh 'printenv'
-          dockerImage = docker.build "${imagename}:${env.BRANCH_NAME}-1.0.${env.BUILD_NUMBER}"
+          // sh 'printenv'
+          dockerImage = docker.build "${imagename}:prod-1.0.${env.BUILD_NUMBER}"
         }
       }
     }
